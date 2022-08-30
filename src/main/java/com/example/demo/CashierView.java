@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
@@ -14,22 +16,22 @@ public class CashierView extends VerticalLayout  {
 
     public CashierView() {
         money = new TextField("เงินทอน");
-        money.setPlaceholder("$");
+        money.setPrefixComponent(VaadinIcon.DOLLAR.create());
         cal = new Button("คำนวณเงินทอน");
         thousand = new TextField();
-        thousand.setPlaceholder("$1000:");
+        thousand.setPrefixComponent(new Span("$1000:"));
         fiveHundred = new TextField();
-        fiveHundred.setPlaceholder("$500:");
+        fiveHundred.setPrefixComponent(new Span("$500:"));
         oneHundred = new TextField();
-        oneHundred.setPlaceholder("$100:");
+        oneHundred.setPrefixComponent(new Span("$100:"));
         twenty = new TextField();
-        twenty.setPlaceholder("$20:");
+        twenty.setPrefixComponent(new Span("$20:"));
         ten = new TextField();
-        ten.setPlaceholder("$10:");
+        ten.setPrefixComponent(new Span("$10:"));
         five = new TextField();
-        five.setPlaceholder("$5:");
+        five.setPrefixComponent(new Span("$5:"));
         one = new TextField();
-        one.setPlaceholder("$1:");
+        one.setPrefixComponent(new Span("$1:"));
         add(money, cal, thousand, fiveHundred, oneHundred, twenty, ten, five, one);
 
 
